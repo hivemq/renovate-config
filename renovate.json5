@@ -1,0 +1,142 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "schedule:nonOfficeHours"
+  ],
+  baseBranches: [
+    "master",
+    "master-4.9",
+    "renovate-playground"
+  ],
+  "useBaseBranchConfig": "merge",
+  enabledManagers: [
+    "gradle"
+  ],
+  "hostRules": [
+    {
+      "matchHost": "https://maven.pkg.github.com/hivemq/hivemq-commons",
+      "username": "hivemq-jenkins",
+      "encrypted": {
+        "token": "wcFMA/xDdHCJBTolAQ/+N554jkqFpGaE4IlIMgnzmxE98pYm+0j0D94XycHUtAi+qHuIqpiDvMfE2Dy6RpvY7/m+D5y1/0YESswsYgumGILqB17tWNhLCf/TeZEO8JyyZKOPzfJXRK7ztejQNdqFAW9ihZL8M4LIs1vQgtE1SxSBDVUG9XVq4ROxrbRK/9Ywi5z51bL2f3TAXhBNR+WI3kV0qyQQT640lxS5wnHSnLwEz65Iorghsc/jBxaeOAuLCg20TS/Qn3Bqj1ESCEWDMzXdVTRJCeTzbki3Mc8ZNhuPvN7NFpABH7xrVrGD+0ZDmeU52sh1wnw4RDR+E6J+ccfPeUF2DEKAV1lU/tQpOpeJrFcw1My9o7adrg7SWkafitjyySThIvlpLwbD93Jxaxf/aTly/5K5r/15O+lFpTOuTB8pLM/CV8bUQuxM+5b+mq8zOSmGbV4o8nGcA0mn4GWvf6Qn916xzBCNJYyrYNDFIzdPXzaYS8JvkEA5NdDBPbJm7abGeAvuUdzjAnAA+FGmesm5+hhulHTz8GsTSFo8IziIpuAuLO7YxCcL+SDs5WFVnO53mzYpi7IU69EwctOb8FMrcjzX2hLS+nF8yMrCllXOPXwVDrrKFfcj8ADtBjnGz3ERpvA6MjBLKouxIl1vLswu9a+X5OJDU0U+62SIUSTmdP0t6O1Uoi9/q7fShAEubSYUuEygdGyB3mvHrzLiE6JFI0gRtd0LJtqJotGLtngsuCX+ZVGhQZ3emaXYHsY4XvpIzA54rNUQ9BSJUl953X+UR1vX+9j/yElpq5BPUE2i2nBUpy7YgRstyfGtzTUmFFgiJf7QuE60M6mYYbP9fJ45ZsCfcqvlYuxYARA81/j3fQ"
+      }
+    },
+    {
+      "matchHost": "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
+      "username": "hivemq-jenkins",
+      "encrypted": {
+        "token": "wcFMA/xDdHCJBTolAQ/+N554jkqFpGaE4IlIMgnzmxE98pYm+0j0D94XycHUtAi+qHuIqpiDvMfE2Dy6RpvY7/m+D5y1/0YESswsYgumGILqB17tWNhLCf/TeZEO8JyyZKOPzfJXRK7ztejQNdqFAW9ihZL8M4LIs1vQgtE1SxSBDVUG9XVq4ROxrbRK/9Ywi5z51bL2f3TAXhBNR+WI3kV0qyQQT640lxS5wnHSnLwEz65Iorghsc/jBxaeOAuLCg20TS/Qn3Bqj1ESCEWDMzXdVTRJCeTzbki3Mc8ZNhuPvN7NFpABH7xrVrGD+0ZDmeU52sh1wnw4RDR+E6J+ccfPeUF2DEKAV1lU/tQpOpeJrFcw1My9o7adrg7SWkafitjyySThIvlpLwbD93Jxaxf/aTly/5K5r/15O+lFpTOuTB8pLM/CV8bUQuxM+5b+mq8zOSmGbV4o8nGcA0mn4GWvf6Qn916xzBCNJYyrYNDFIzdPXzaYS8JvkEA5NdDBPbJm7abGeAvuUdzjAnAA+FGmesm5+hhulHTz8GsTSFo8IziIpuAuLO7YxCcL+SDs5WFVnO53mzYpi7IU69EwctOb8FMrcjzX2hLS+nF8yMrCllXOPXwVDrrKFfcj8ADtBjnGz3ERpvA6MjBLKouxIl1vLswu9a+X5OJDU0U+62SIUSTmdP0t6O1Uoi9/q7fShAEubSYUuEygdGyB3mvHrzLiE6JFI0gRtd0LJtqJotGLtngsuCX+ZVGhQZ3emaXYHsY4XvpIzA54rNUQ9BSJUl953X+UR1vX+9j/yElpq5BPUE2i2nBUpy7YgRstyfGtzTUmFFgiJf7QuE60M6mYYbP9fJ45ZsCfcqvlYuxYARA81/j3fQ"
+      }
+    }
+  ],
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "maven"
+      ],
+      "registryUrls": [
+        "https://repo.maven.apache.org/maven2",
+        "https://packages.confluent.io/maven",
+        "https://maven.pkg.github.com/hivemq/hivemq-commons",
+        "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
+        "https://jitpack.io"
+      ]
+    },
+    {
+      "groupName": "all minor dependencies",
+      "groupSlug": "all-minor",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ]
+    },
+    {
+      "groupName": "all patch dependencies",
+      "groupSlug": "all-patch",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ]
+    },
+    {
+      "groupName": "xodus non-major dependencies",
+      "groupSlug": "xodus-non-major",
+      "matchPackagePrefixes": [
+        "org.jetbrains.xodus"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "rocksdb non-major dependencies",
+      "groupSlug": "rocksdb-non-major",
+      "matchPackagePrefixes": [
+        "org.rocksdb"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "jgroups non-major dependencies",
+      "groupSlug": "jgroups-non-major",
+      "matchPackagePrefixes": [
+        "org.jgroups"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "netty non-major dependencies",
+      "groupSlug": "netty-non-major",
+      "matchPackagePrefixes": [
+        "io.netty"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "matchPackagePrefixes": [
+        "io.opentelemetry"
+      ],
+      "ignoreUnstable": false
+    },
+    //    8.14.3 is the latest version that still has the Apache v2 license. So, we can't upgrade to versions greater than that.
+    {
+      "matchPackagePrefixes": [
+        "com.vaadin"
+      ],
+      "matchCurrentVersion": "[8.14.3,)",
+      "allowedVersions": "<=8.14.3"
+    },
+    //    avoid kafka versions with commercial licenses i.e. versions with 'ce' suffixes
+    {
+      "matchPackagePrefixes": [
+        "org.apache.kafka"
+      ],
+      "allowedVersions": "!/ce$/"
+    },
+    //    avoid jctools version with 'ea' suffix
+    //    https://github.com/JCTools/JCTools/issues/360
+    {
+      "matchPackagePrefixes": [
+        "org.jctools"
+      ],
+      "allowedVersions": "!/ea$/"
+    }
+  ]
+}
