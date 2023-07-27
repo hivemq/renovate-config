@@ -1,0 +1,1 @@
+# hivemq-renovate-config
