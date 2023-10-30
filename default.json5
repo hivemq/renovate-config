@@ -29,20 +29,42 @@
   },
   "packageRules": [
     {
-      "matchDatasources": [
-        "maven"
+      "matchPackagePatterns": [
+        "^io\\.confluent[.:]",
+        "^org\\.apache\\.kafka[.:]"
       ],
       "registryUrls": [
-        "https://repo.maven.apache.org/maven2",
         "https://packages.confluent.io/maven",
-        "https://maven.pkg.github.com/hivemq/hivemq-commons",
-        "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
-        "https://jitpack.io",
-        "https://plugins.gradle.org/m2"
       ]
     },
     {
-      "matchUpdateTypes": ["patch"],
+      "matchPackagePrefixes": [
+        "com.hivemq.commons:"
+      ],
+      "registryUrls": [
+        "https://maven.pkg.github.com/hivemq/hivemq-commons",
+      ]
+    },
+    {
+      "matchPackagePrefixes": [
+        "com.byteowls:"
+      ],
+      "registryUrls": [
+        "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
+      ]
+    },
+    {
+      "matchPackagePatterns": [
+        "^com\\.github\\.everit-org\\.json-schema[.:]"
+      ],
+      "registryUrls": [
+        "https://jitpack.io",
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
       "platformAutomerge": false
