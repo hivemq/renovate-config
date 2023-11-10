@@ -70,11 +70,6 @@
       "platformAutomerge": false
     },
     {
-      "groupName": "initial dev (0.y.z) dependencies",
-      "groupSlug": "0.y.z-deps",
-      "matchCurrentVersion": "/^0/"
-    },
-    {
       "groupName": "all minor dependencies",
       "groupSlug": "all-minor",
       "matchPackagePatterns": [
@@ -137,6 +132,12 @@
         "minor",
         "patch"
       ]
+    },
+    // has to be placed after the general grouping rules above
+    {
+      "groupName": "initial dev (0.y.z) dependencies",
+      "groupSlug": "0.y.z-deps",
+      "matchCurrentVersion": "/^0/"
     },
     {
       "matchPackagePrefixes": [
