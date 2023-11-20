@@ -167,6 +167,13 @@
         "org.jctools"
       ],
       "allowedVersions": "!/ea$/"
+    },
+    //    avoid updating HiveMQ SDKs
+    {
+      "matchPackagePatterns": [
+        "^com\\.hivemq[.:].*-sdk$"
+      ],
+      "enabled": false
     }
   ]
 }
