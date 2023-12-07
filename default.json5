@@ -67,6 +67,9 @@
       ],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "extends": [
+        "schedule:automergeNonOfficeHours"
+      ],
       "platformAutomerge": false
     },
     {
@@ -120,7 +123,8 @@
       "matchUpdateTypes": [
         "minor",
         "patch"
-      ]
+      ],
+      "automerge": false
     },
     {
       "groupName": "netty non-major dependencies",
