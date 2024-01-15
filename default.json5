@@ -46,14 +46,6 @@
       ]
     },
     {
-      "matchPackageNames": [
-        "hivemq-data-hub"
-      ],
-      "registryUrls": [
-        "https://maven.pkg.github.com/hivemq/hivemq-commons",
-      ]
-    },
-    {
       "matchPackagePrefixes": [
         "com.byteowls:"
       ],
