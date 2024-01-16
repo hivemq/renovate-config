@@ -112,7 +112,8 @@
       "matchUpdateTypes": [
         "minor",
         "patch"
-      ]
+      ],
+      "dependencyDashboardApproval": true
     },
     {
       "groupName": "jgroups non-major dependencies",
@@ -124,7 +125,7 @@
         "minor",
         "patch"
       ],
-      "automerge": false
+      "dependencyDashboardApproval": true
     },
     {
       "groupName": "netty non-major dependencies",
