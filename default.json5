@@ -6,7 +6,8 @@
     "schedule:earlyMondays"
   ],
   enabledManagers: [
-    "gradle"
+    "gradle",
+    "dockerfile"
   ],
   "hostRules": [
     {
