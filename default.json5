@@ -28,6 +28,7 @@
   "major": {
     "dependencyDashboardApproval": true
   },
+  "pinDigests": true,
   "packageRules": [
     {
       "matchPackagePatterns": [
