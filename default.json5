@@ -3,7 +3,8 @@
   description: "This config defines the default Renovate rules that will be used in HiveMQ Product repos.",
   "extends": [
     "config:base",
-    "schedule:weekends"
+    "schedule:weekends",
+    "automergeSchedule:automergeNonOfficeHours"
   ],
   enabledManagers: [
     "gradle",
