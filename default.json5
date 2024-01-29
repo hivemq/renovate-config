@@ -70,9 +70,6 @@
       ],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
-      "extends": [
-        "schedule:automergeNonOfficeHours"
-      ],
       "platformAutomerge": false
     },
     {
