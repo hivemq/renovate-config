@@ -4,11 +4,13 @@
   "extends": [
     "config:base",
     "schedule:weekends",
-    "schedule:automergeNonOfficeHours"
+    "schedule:automergeNonOfficeHours",
+    "helpers:pinGitHubActionDigests"
   ],
   enabledManagers: [
     "gradle",
-    "dockerfile"
+    "dockerfile",
+    "github-actions"
   ],
   "hostRules": [
     {
