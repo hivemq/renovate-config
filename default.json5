@@ -30,6 +30,9 @@
     "dependencyDashboardApproval": true
   },
   "pinDigests": true,
+  "labels": [
+    "renovate"
+  ],
   "packageRules": [
     {
       "matchPackagePatterns": [
