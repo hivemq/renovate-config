@@ -148,13 +148,15 @@
       "groupSlug": "0.y.z-deps",
       "matchCurrentVersion": "/^0/"
     },
+    // Disabled until api stabilizes, will be enabled only in `hivemq-distributed-tracing-extension` for now
     {
       "matchPackagePrefixes": [
         "io.opentelemetry"
       ],
-      "ignoreUnstable": false
+      "ignoreUnstable": false,
+      "enabled": false
     },
-    //    8.14.3 is the latest version that still has the Apache v2 license. So, we can't upgrade to versions greater than that.
+    // 8.14.3 is the latest version that still has the Apache v2 license. So, we can't upgrade to versions greater than that.
     {
       "matchPackagePrefixes": [
         "com.vaadin"
@@ -162,15 +164,15 @@
       "matchCurrentVersion": "[8.14.3,)",
       "allowedVersions": "<=8.14.3"
     },
-    //    avoid kafka versions with commercial licenses i.e. versions with 'ce' suffixes
+    // avoid kafka versions with commercial licenses i.e. versions with 'ce' suffixes
     {
       "matchPackagePrefixes": [
         "org.apache.kafka"
       ],
       "allowedVersions": "!/ce$/"
     },
-    //    avoid jctools version with 'ea' suffix
-    //    https://github.com/JCTools/JCTools/issues/360
+    // avoid jctools version with 'ea' suffix
+    // https://github.com/JCTools/JCTools/issues/360
     {
       "matchPackagePrefixes": [
         "org.jctools"
@@ -184,7 +186,7 @@
       ],
       "enabled": false
     },
-    //    avoid updating Gradle Enterprise plugins as these need to be updated in sync
+    // avoid updating Gradle Enterprise plugins as these need to be updated in sync
     {
       "matchPackageNames": [
         "com.gradle.enterprise",
