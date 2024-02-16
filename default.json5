@@ -10,6 +10,7 @@
     "gradle",
     "dockerfile",
     "github-actions",
+    "npm",
   ],
   "hostRules": [
     {
@@ -22,6 +23,13 @@
     {
       "matchHost": "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
       "username": "hivemq-jenkins",
+      "encrypted": {
+        "token": "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
+      }
+    },
+    {
+      "matchHost": "npm.pkg.github.com",
+      "hostType": "npm",
       "encrypted": {
         "token": "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
       }
