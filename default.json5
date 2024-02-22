@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   description: "This config defines the default Renovate rules that will be used in HiveMQ Product repos.",
   "extends": [
-    "config:base",
+    "config:recommended",
     "schedule:weekends",
     "schedule:automergeNonOfficeHours",
   ],
@@ -77,19 +77,15 @@
       ]
     },
     {
+      "groupName": "all major dependencies",
+      "groupSlug": "all-major",
       "matchUpdateTypes": [
-        "patch"
+        "major"
       ],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true,
-      "platformAutomerge": false
     },
     {
       "groupName": "all minor dependencies",
       "groupSlug": "all-minor",
-      "matchPackagePatterns": [
-        "*"
-      ],
       "matchUpdateTypes": [
         "minor"
       ]
@@ -97,12 +93,12 @@
     {
       "groupName": "all patch dependencies",
       "groupSlug": "all-patch",
-      "matchPackagePatterns": [
-        "*"
-      ],
       "matchUpdateTypes": [
         "patch"
-      ]
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "platformAutomerge": false
     },
     {
       "groupName": "xodus non-major dependencies",
@@ -150,12 +146,6 @@
         "patch"
       ]
     },
-    // has to be placed after the general grouping rules above
-    {
-      "groupName": "initial dev (0.y.z) dependencies",
-      "groupSlug": "0.y.z-deps",
-      "matchCurrentVersion": "/^0/"
-    },
     // Disabled until api stabilizes, will be enabled only in `hivemq-distributed-tracing-extension` for now
     {
       "matchPackagePrefixes": [
@@ -187,7 +177,7 @@
       ],
       "allowedVersions": "!/ea$/"
     },
-    //    avoid updating HiveMQ SDKs
+    // avoid updating HiveMQ SDKs
     {
       "matchPackagePatterns": [
         "^com\\.hivemq[.:].*-sdk$"
@@ -201,6 +191,32 @@
         "com.gradle.common-custom-user-data-gradle-plugin"
       ],
       "enabled": false
+    },
+    // GitHub Actions major
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "all major GitHub Actions dependencies",
+      "groupSlug": "github-actions-major",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": false
+    },
+    // GitHub Actions minor & patch
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "all non-major GitHub Actions dependencies",
+      "groupSlug": "github-actions-non-major",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true,
+      "platformAutomerge": false
     }
   ]
 }
