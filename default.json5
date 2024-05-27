@@ -214,6 +214,7 @@
       matchUpdateTypes: [
         "minor",
         "patch",
+        "digest",
       ],
       automerge: true,
       platformAutomerge: false,
