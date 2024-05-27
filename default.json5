@@ -1,7 +1,7 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   description: "This config defines the default Renovate rules that will be used in HiveMQ Product repos.",
-  "extends": [
+  extends: [
     "config:recommended",
     "schedule:weekends",
     "schedule:automergeNonOfficeHours",
@@ -12,211 +12,211 @@
     "github-actions",
     "npm",
   ],
-  "hostRules": [
+  hostRules: [
     {
-      "matchHost": "https://maven.pkg.github.com/hivemq/hivemq-commons",
-      "username": "hivemq-jenkins",
-      "encrypted": {
-        "token": "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
-      }
+      matchHost: "https://maven.pkg.github.com/hivemq/hivemq-commons",
+      username: "hivemq-jenkins",
+      encrypted: {
+        token: "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
+      },
     },
     {
-      "matchHost": "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
-      "username": "hivemq-jenkins",
-      "encrypted": {
-        "token": "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
-      }
+      matchHost: "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
+      username: "hivemq-jenkins",
+      encrypted: {
+        token: "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
+      },
     },
     {
-      "matchHost": "npm.pkg.github.com",
-      "hostType": "npm",
-      "encrypted": {
-        "token": "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
-      }
-    }
+      matchHost: "npm.pkg.github.com",
+      hostType: "npm",
+      encrypted: {
+        token: "wcFMA/xDdHCJBTolAQ/+N0U5pRQz9R4J/JLcAEYT3A5g1kW6PSNcAQtx6JblcUYzbB61BVCOSzWay3TEqNdWJB/PHID4RIbiru2ZABOqEnqliNvJ4AUwb3LUgUiNaPSa5IhKQAO1t6z0yU5Q99CyITt4JZpy4aoF8S4blH1dh7EhhvRm/vFjZGemjRroDXJ5zEKTU4LPyXFOu5n/dnQgxEeljZq3VTXzRYP8cjrdY8QI1UdWtU/QnTsFqmHNBmkPRz1FGn5i/h4wc58q5bPGG6XeGXqH5Y0+36Q00oBNo+yNX0st1cwtQL0wYT0rYDkqy7m+mX7epKbOUsaRhlPVmpSEe4302VAJjNRQ2dL8bbH9wCXQWL9YxQk07ekDb9t8TVV+HJYmGJJMqAklag+oYsKqzBa7FEM77rYtGgBJGhrFAjD8IFmhqF8rYARl8RpZrW3lSis4bJbg1t39Za0LYN+2AHimbu7eKw2iTtMtkiDGQQqv93Ts3oEY+DOg/nkFMqFbv1hr6B4StVXCuUn3s+bODpwyrHnusT7O/NkLl6zo14atOE0xAYvXaDQpvjy6FkX+0MeCuXU8j0vUbte2X7QD53uPwDRfevN30dVdXaKH15rxvFBpRzupYGQtW5RCnhebouAmOVWXHc5In4BSFyeRsbiK5C90QroeG1ST87CkPotPgB5qs/kJdmXqnGPSdQHznHvQ7VjTao3EcLNhLVC2ItuCl2/X2GmaLt+H8OWD5Ij7oFTbWBf+m+YYLVp8TBi7FRIocKoj9yZbyM18SW3YVUtaxNBSnuhKmwrLcilKLANDI5t3ZMQF/AQUCI5lmgnSRZp9qTevWfGyzrQV7D5jBEGbzQ"
+      },
+    },
   ],
-  "major": {
-    "dependencyDashboardApproval": true
+  major: {
+    dependencyDashboardApproval: true,
   },
-  "pinDigests": true,
-  "labels": [
-    "renovate"
+  pinDigests: true,
+  labels: [
+    "renovate",
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "matchPackagePatterns": [
+      matchPackagePatterns: [
         "^io\\.confluent[.:]",
-        "^org\\.apache\\.kafka[.:]"
+        "^org\\.apache\\.kafka[.:]",
       ],
-      "registryUrls": [
+      registryUrls: [
         "https://packages.confluent.io/maven",
-      ]
+      ],
     },
     {
-      "matchPackagePrefixes": [
-        "com.hivemq.commons:"
+      matchPackagePrefixes: [
+        "com.hivemq.commons:",
       ],
-      "registryUrls": [
+      registryUrls: [
         "https://maven.pkg.github.com/hivemq/hivemq-commons",
-      ]
+      ],
     },
     {
-      "matchPackagePrefixes": [
-        "com.byteowls:"
+      matchPackagePrefixes: [
+        "com.byteowls:",
       ],
-      "registryUrls": [
+      registryUrls: [
         "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
-      ]
-    },
-    {
-      "matchPackagePatterns": [
-        "^com\\.github\\.everit-org\\.json-schema[.:]"
       ],
-      "registryUrls": [
-        "https://jitpack.io",
-      ]
     },
     {
-      "groupName": "all major dependencies",
-      "groupSlug": "all-major",
-      "matchUpdateTypes": [
+      matchPackagePatterns: [
+        "^com\\.github\\.everit-org\\.json-schema[.:]",
+      ],
+      registryUrls: [
+        "https://jitpack.io",
+      ],
+    },
+    {
+      groupName: "all major dependencies",
+      groupSlug: "all-major",
+      matchUpdateTypes: [
         "major"
       ],
     },
     {
-      "groupName": "all minor dependencies",
-      "groupSlug": "all-minor",
-      "matchUpdateTypes": [
-        "minor"
-      ]
-    },
-    {
-      "groupName": "all patch dependencies",
-      "groupSlug": "all-patch",
-      "matchUpdateTypes": [
-        "patch"
-      ],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true,
-      "platformAutomerge": false
-    },
-    {
-      "groupName": "xodus non-major dependencies",
-      "groupSlug": "xodus-non-major",
-      "matchPackagePrefixes": [
-        "org.jetbrains.xodus"
-      ],
-      "matchUpdateTypes": [
+      groupName: "all minor dependencies",
+      groupSlug: "all-minor",
+      matchUpdateTypes: [
         "minor",
-        "patch"
-      ]
+      ],
     },
     {
-      "groupName": "rocksdb non-major dependencies",
-      "groupSlug": "rocksdb-non-major",
-      "matchPackagePrefixes": [
-        "org.rocksdb"
+      groupName: "all patch dependencies",
+      groupSlug: "all-patch",
+      matchUpdateTypes: [
+        "patch",
       ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "dependencyDashboardApproval": true
+      matchCurrentVersion: "!/^0/",
+      automerge: true,
+      platformAutomerge: false,
     },
     {
-      "groupName": "jgroups non-major dependencies",
-      "groupSlug": "jgroups-non-major",
-      "matchPackagePrefixes": [
-        "org.jgroups"
+      groupName: "xodus non-major dependencies",
+      groupSlug: "xodus-non-major",
+      matchPackagePrefixes: [
+        "org.jetbrains.xodus",
       ],
-      "matchUpdateTypes": [
+      matchUpdateTypes: [
         "minor",
-        "patch"
+        "patch",
       ],
-      "dependencyDashboardApproval": true
     },
     {
-      "groupName": "netty non-major dependencies",
-      "groupSlug": "netty-non-major",
-      "matchPackagePrefixes": [
-        "io.netty"
+      groupName: "rocksdb non-major dependencies",
+      groupSlug: "rocksdb-non-major",
+      matchPackagePrefixes: [
+        "org.rocksdb",
       ],
-      "matchUpdateTypes": [
+      matchUpdateTypes: [
         "minor",
-        "patch"
-      ]
+        "patch",
+      ],
+      dependencyDashboardApproval: true,
+    },
+    {
+      groupName: "jgroups non-major dependencies",
+      groupSlug: "jgroups-non-major",
+      matchPackagePrefixes: [
+        "org.jgroups",
+      ],
+      matchUpdateTypes: [
+        "minor",
+        "patch",
+      ],
+      dependencyDashboardApproval: true,
+    },
+    {
+      groupName: "netty non-major dependencies",
+      groupSlug: "netty-non-major",
+      matchPackagePrefixes: [
+        "io.netty",
+      ],
+      matchUpdateTypes: [
+        "minor",
+        "patch",
+      ],
     },
     // Disabled until api stabilizes, will be enabled only in `hivemq-distributed-tracing-extension` for now
     {
-      "matchPackagePrefixes": [
-        "io.opentelemetry"
+      matchPackagePrefixes: [
+        "io.opentelemetry",
       ],
-      "ignoreUnstable": false,
-      "enabled": false
+      ignoreUnstable: false,
+      enabled: false,
     },
     // 8.14.3 is the latest version that still has the Apache v2 license. So, we can't upgrade to versions greater than that.
     {
-      "matchPackagePrefixes": [
-        "com.vaadin"
+      matchPackagePrefixes: [
+        "com.vaadin",
       ],
-      "matchCurrentVersion": "[8.14.3,)",
-      "allowedVersions": "<=8.14.3"
+      matchCurrentVersion: "[8.14.3,)",
+      allowedVersions: "<=8.14.3",
     },
     // avoid kafka versions with commercial licenses i.e. versions with 'ce' suffixes
     {
-      "matchPackagePrefixes": [
-        "org.apache.kafka"
+      matchPackagePrefixes: [
+        "org.apache.kafka",
       ],
-      "allowedVersions": "!/ce$/"
+      allowedVersions: "!/ce$/",
     },
     // avoid jctools version with 'ea' suffix
     // https://github.com/JCTools/JCTools/issues/360
     {
-      "matchPackagePrefixes": [
-        "org.jctools"
+      matchPackagePrefixes: [
+        "org.jctools",
       ],
-      "allowedVersions": "!/ea$/"
+      allowedVersions: "!/ea$/",
     },
     // avoid updating HiveMQ SDKs
     {
-      "matchPackagePatterns": [
-        "^com\\.hivemq[.:].*-sdk$"
+      matchPackagePatterns: [
+        "^com\\.hivemq[.:].*-sdk$",
       ],
-      "enabled": false
+      enabled: false,
     },
     // avoid updating Gradle Enterprise plugins as these need to be updated in sync
     {
       "matchPackageNames": [
         "com.gradle.enterprise",
-        "com.gradle.common-custom-user-data-gradle-plugin"
+        "com.gradle.common-custom-user-data-gradle-plugin",
       ],
-      "enabled": false
+      enabled: false,
     },
     // GitHub Actions major
     {
-      "matchManagers": [
-        "github-actions"
+      matchManagers: [
+        "github-actions",
       ],
-      "groupName": "all major GitHub Actions dependencies",
-      "groupSlug": "github-actions-major",
-      "matchUpdateTypes": [
-        "major"
+      groupName: "all major GitHub Actions dependencies",
+      groupSlug: "github-actions-major",
+      matchUpdateTypes: [
+        "major",
       ],
-      "dependencyDashboardApproval": false
+      dependencyDashboardApproval: false,
     },
     // GitHub Actions minor & patch
     {
-      "matchManagers": [
-        "github-actions"
+      matchManagers: [
+        "github-actions",
       ],
-      "groupName": "all non-major GitHub Actions dependencies",
-      "groupSlug": "github-actions-non-major",
-      "matchUpdateTypes": [
+      groupName: "all non-major GitHub Actions dependencies",
+      groupSlug: "github-actions-non-major",
+      matchUpdateTypes: [
         "minor",
-        "patch"
+        "patch",
       ],
-      "automerge": true,
-      "platformAutomerge": false
-    }
-  ]
+      automerge: true,
+      platformAutomerge: false,
+    },
+  ],
 }
