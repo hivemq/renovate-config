@@ -80,7 +80,7 @@
       groupName: "all major dependencies",
       groupSlug: "all-major",
       matchUpdateTypes: [
-        "major"
+        "major",
       ],
     },
     {
@@ -93,6 +93,39 @@
     {
       groupName: "all patch dependencies",
       groupSlug: "all-patch",
+      matchUpdateTypes: [
+        "patch",
+      ],
+      matchCurrentVersion: "!/^0/",
+      automerge: true,
+      platformAutomerge: false,
+    },
+    {
+      matchManagers: [
+        "npm",
+      ],
+      groupName: "npm all major dependencies",
+      groupSlug: "all-major-npm",
+      matchUpdateTypes: [
+        "major",
+      ],
+    },
+    {
+      matchManagers: [
+        "npm",
+      ],
+      groupName: "npm all minor dependencies",
+      groupSlug: "all-minor-npm",
+      matchUpdateTypes: [
+        "minor",
+      ],
+    },
+    {
+      matchManagers: [
+        "npm",
+      ],
+      groupName: "npm patch dependencies",
+      groupSlug: "npm-patch",
       matchUpdateTypes: [
         "patch",
       ],
