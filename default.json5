@@ -82,6 +82,7 @@
       matchUpdateTypes: [
         "major",
       ],
+      matchCurrentVersion: "!/^0/",
     },
     {
       groupName: "all minor dependencies",
@@ -89,6 +90,7 @@
       matchUpdateTypes: [
         "minor",
       ],
+      matchCurrentVersion: "!/^0/",
     },
     {
       groupName: "all patch dependencies",
@@ -109,6 +111,7 @@
       matchUpdateTypes: [
         "major",
       ],
+      matchCurrentVersion: "!/^0/",
     },
     {
       matchManagers: [
@@ -119,6 +122,7 @@
       matchUpdateTypes: [
         "minor",
       ],
+      matchCurrentVersion: "!/^0/",
     },
     {
       matchManagers: [
