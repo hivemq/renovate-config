@@ -111,6 +111,10 @@
       platformAutomerge: false,
     },
     {
+      matchCurrentVersion: "/^0/",
+      dependencyDashboardApproval: true,
+    },
+    {
       groupName: "xodus non-major dependencies",
       groupSlug: "xodus-non-major",
       matchPackageNames: [
