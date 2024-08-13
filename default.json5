@@ -44,25 +44,25 @@
   ],
   packageRules: [
     {
-      matchPackagePatterns: [
-        "^io\\.confluent[.:]",
-        "^org\\.apache\\.kafka[.:]",
+      matchPackageNames: [
+        "io.confluent:*",
+        "org.apache.kafka:*",
       ],
       registryUrls: [
         "https://packages.confluent.io/maven",
       ],
     },
     {
-      matchPackagePrefixes: [
-        "com.hivemq.commons:",
+      matchPackageNames: [
+        "com.hivemq.commons:*",
       ],
       registryUrls: [
         "https://maven.pkg.github.com/hivemq/hivemq-commons",
       ],
     },
     {
-      matchPackagePrefixes: [
-        "com.byteowls:",
+      matchPackageNames: [
+        "com.byteowls:*",
       ],
       registryUrls: [
         "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
@@ -113,8 +113,8 @@
     {
       groupName: "xodus non-major dependencies",
       groupSlug: "xodus-non-major",
-      matchPackagePrefixes: [
-        "org.jetbrains.xodus",
+      matchPackageNames: [
+        "org.jetbrains.xodus:*",
       ],
       matchUpdateTypes: [
         "minor",
@@ -124,8 +124,8 @@
     {
       groupName: "rocksdb non-major dependencies",
       groupSlug: "rocksdb-non-major",
-      matchPackagePrefixes: [
-        "org.rocksdb",
+      matchPackageNames: [
+        "org.rocksdb:*",
       ],
       matchUpdateTypes: [
         "minor",
@@ -136,8 +136,8 @@
     {
       groupName: "jgroups non-major dependencies",
       groupSlug: "jgroups-non-major",
-      matchPackagePrefixes: [
-        "org.jgroups",
+      matchPackageNames: [
+        "org.jgroups:*",
       ],
       matchUpdateTypes: [
         "minor",
@@ -148,8 +148,8 @@
     {
       groupName: "netty non-major dependencies",
       groupSlug: "netty-non-major",
-      matchPackagePrefixes: [
-        "io.netty",
+      matchPackageNames: [
+        "io.netty:*",
       ],
       matchUpdateTypes: [
         "minor",
@@ -158,47 +158,47 @@
     },
     // Disabled until api stabilizes, will be enabled only in `hivemq-distributed-tracing-extension` for now
     {
-      matchPackagePrefixes: [
-        "io.opentelemetry",
+      matchPackageNames: [
+        "/^io\\.opentelemetry[.:].*/",
       ],
       ignoreUnstable: false,
       enabled: false,
     },
     // 8.14.3 is the latest version that still has the Apache v2 license. So, we can't upgrade to versions greater than that.
     {
-      matchPackagePrefixes: [
-        "com.vaadin",
+      matchPackageNames: [
+        "com.vaadin:*",
       ],
       matchCurrentVersion: "[8.14.3,)",
       allowedVersions: "<=8.14.3",
     },
     // avoid kafka versions with commercial licenses i.e. versions with 'ce' suffixes
     {
-      matchPackagePrefixes: [
-        "org.apache.kafka",
+      matchPackageNames: [
+        "org.apache.kafka:*",
       ],
       allowedVersions: "!/ce$/",
     },
     // avoid jctools version with 'ea' suffix
     // https://github.com/JCTools/JCTools/issues/360
     {
-      matchPackagePrefixes: [
-        "org.jctools",
+      matchPackageNames: [
+        "org.jctools:*",
       ],
       allowedVersions: "!/ea$/",
     },
     // avoid updating HiveMQ SDKs
     {
-      matchPackagePatterns: [
-        "^com\\.hivemq[.:].*-sdk$",
+      matchPackageNames: [
+        "/^com\\.hivemq[.:].*-sdk$/",
       ],
       enabled: false,
     },
     // avoid updating Gradle Enterprise plugins as these need to be updated in sync
     {
       "matchPackageNames": [
-        "com.gradle.enterprise",
-        "com.gradle.common-custom-user-data-gradle-plugin",
+        "com.gradle.enterprise:com.gradle.enterprise.gradle-plugin",
+        "com.gradle.common-custom-user-data-gradle-plugin:com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin",
       ],
       enabled: false,
     },
