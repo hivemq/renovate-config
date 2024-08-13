@@ -69,14 +69,6 @@
       ],
     },
     {
-      matchPackagePatterns: [
-        "^com\\.github\\.everit-org\\.json-schema[.:]",
-      ],
-      registryUrls: [
-        "https://jitpack.io",
-      ],
-    },
-    {
       groupName: "all minor dependencies",
       groupSlug: "all-minor",
       matchUpdateTypes: [
