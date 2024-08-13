@@ -69,20 +69,20 @@
       ],
     },
     {
-      groupName: "all minor dependencies",
-      groupSlug: "all-minor",
       matchUpdateTypes: [
         "minor",
       ],
       matchCurrentVersion: "!/^0/",
+      groupName: "all minor dependencies",
+      groupSlug: "all-minor",
     },
     {
-      groupName: "all patch dependencies",
-      groupSlug: "all-patch",
       matchUpdateTypes: [
         "patch",
       ],
       matchCurrentVersion: "!/^0/",
+      groupName: "all patch dependencies",
+      groupSlug: "all-patch",
       automerge: true,
       platformAutomerge: false,
     },
@@ -90,23 +90,23 @@
       matchManagers: [
         "npm",
       ],
-      groupName: "npm all minor dependencies",
-      groupSlug: "all-minor-npm",
       matchUpdateTypes: [
         "minor",
       ],
       matchCurrentVersion: "!/^0/",
+      groupName: "all minor npm dependencies",
+      groupSlug: "all-minor-npm",
     },
     {
       matchManagers: [
         "npm",
       ],
-      groupName: "npm patch dependencies",
-      groupSlug: "npm-patch",
       matchUpdateTypes: [
         "patch",
       ],
       matchCurrentVersion: "!/^0/",
+      groupName: "all patch npm dependencies",
+      groupSlug: "all-patch-npm",
       automerge: true,
       platformAutomerge: false,
     },
@@ -115,8 +115,6 @@
       dependencyDashboardApproval: true,
     },
     {
-      groupName: "xodus non-major dependencies",
-      groupSlug: "xodus-non-major",
       matchPackageNames: [
         "org.jetbrains.xodus:*",
       ],
@@ -124,10 +122,10 @@
         "minor",
         "patch",
       ],
+      groupName: "non-major xodus dependencies",
+      groupSlug: "non-major-xodus",
     },
     {
-      groupName: "rocksdb non-major dependencies",
-      groupSlug: "rocksdb-non-major",
       matchPackageNames: [
         "org.rocksdb:*",
       ],
@@ -135,11 +133,11 @@
         "minor",
         "patch",
       ],
+      groupName: "non-major rocksdb dependencies",
+      groupSlug: "non-major-rocksdb",
       dependencyDashboardApproval: true,
     },
     {
-      groupName: "jgroups non-major dependencies",
-      groupSlug: "jgroups-non-major",
       matchPackageNames: [
         "org.jgroups:*",
       ],
@@ -147,11 +145,11 @@
         "minor",
         "patch",
       ],
+      groupName: "non-major jgroups dependencies",
+      groupSlug: "non-major-jgroups",
       dependencyDashboardApproval: true,
     },
     {
-      groupName: "netty non-major dependencies",
-      groupSlug: "netty-non-major",
       matchPackageNames: [
         "io.netty:*",
       ],
@@ -159,6 +157,8 @@
         "minor",
         "patch",
       ],
+      groupName: "non-major netty dependencies",
+      groupSlug: "non-major-netty",
     },
     // Disabled until api stabilizes, will be enabled only in `hivemq-distributed-tracing-extension` for now
     {
@@ -211,11 +211,11 @@
       matchManagers: [
         "github-actions",
       ],
-      groupName: "all major GitHub Actions dependencies",
-      groupSlug: "github-actions-major",
       matchUpdateTypes: [
         "major",
       ],
+      groupName: "all major GitHub Actions dependencies",
+      groupSlug: "all-major-github-actions",
       dependencyDashboardApproval: false,
     },
     // GitHub Actions minor & patch
@@ -223,13 +223,13 @@
       matchManagers: [
         "github-actions",
       ],
-      groupName: "all non-major GitHub Actions dependencies",
-      groupSlug: "github-actions-non-major",
       matchUpdateTypes: [
         "minor",
         "patch",
         "digest",
       ],
+      groupName: "all non-major GitHub Actions dependencies",
+      groupSlug: "all-non-major-github-actions",
       automerge: true,
       platformAutomerge: false,
     },
