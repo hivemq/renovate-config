@@ -109,40 +109,26 @@
       matchCurrentVersion: "/^0/",
       dependencyDashboardApproval: true,
     },
+    // avoid updating xodus dependencies - marked to be deprecated soon
     {
       matchPackageNames: [
         "org.jetbrains.xodus:*",
       ],
-      matchUpdateTypes: [
-        "minor",
-        "patch",
-      ],
-      groupName: "non-major xodus dependencies",
-      groupSlug: "non-major-xodus",
+      enabled: false
     },
+    // rocksdb can't be updated automatically - requires deep analysis
     {
       matchPackageNames: [
         "org.rocksdb:*",
       ],
-      matchUpdateTypes: [
-        "minor",
-        "patch",
-      ],
-      groupName: "non-major rocksdb dependencies",
-      groupSlug: "non-major-rocksdb",
-      dependencyDashboardApproval: true,
+      enabled: false
     },
+    // jgroups can't be updated automatically - requires deep analysis
     {
       matchPackageNames: [
         "org.jgroups:*",
       ],
-      matchUpdateTypes: [
-        "minor",
-        "patch",
-      ],
-      groupName: "non-major jgroups dependencies",
-      groupSlug: "non-major-jgroups",
-      dependencyDashboardApproval: true,
+      enabled: false
     },
     {
       matchPackageNames: [
