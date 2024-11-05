@@ -114,21 +114,21 @@
       matchPackageNames: [
         "org.jetbrains.xodus:*",
       ],
-      enabled: false
+      enabled: false,
     },
     // rocksdb can't be updated automatically - requires deep analysis
     {
       matchPackageNames: [
         "org.rocksdb:*",
       ],
-      enabled: false
+      enabled: false,
     },
     // jgroups can't be updated automatically - requires deep analysis
     {
       matchPackageNames: [
         "org.jgroups:*",
       ],
-      enabled: false
+      enabled: false,
     },
     {
       matchPackageNames: [
