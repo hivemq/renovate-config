@@ -37,6 +37,9 @@
   labels: [
     "renovate",
   ],
+  dependencyDashboardLabels: [
+    "renovate",
+  ],
   packageRules: [
     {
       matchPackageNames: [
