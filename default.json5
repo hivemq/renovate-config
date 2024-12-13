@@ -185,6 +185,7 @@
     // avoid updating Gradle Enterprise plugins as these need to be updated in sync
     {
       "matchPackageNames": [
+        "com.gradle.develocity:com.gradle.develocity.gradle.plugin",
         "com.gradle.enterprise:com.gradle.enterprise.gradle.plugin",
         "com.gradle.common-custom-user-data-gradle-plugin:com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin",
       ],
