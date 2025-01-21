@@ -12,6 +12,7 @@
     "dockerfile",
     "github-actions",
     "npm",
+    "regex",
   ],
   hostRules: [
     {
