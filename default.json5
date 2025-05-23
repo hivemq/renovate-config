@@ -138,6 +138,7 @@
       matchPackageNames: [
         "io.netty:*",
       ],
+      allowedVersions: "<4.2",
       matchUpdateTypes: [
         "minor",
         "patch",
