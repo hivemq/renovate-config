@@ -134,15 +134,12 @@
       ],
       enabled: false,
     },
+    // Netty 4.2 introduces breaking changes. We have to fix the IsolatedExtensionClassloader before we can update.
     {
       matchPackageNames: [
         "io.netty:*",
       ],
       allowedVersions: "<4.2",
-      matchUpdateTypes: [
-        "minor",
-        "patch",
-      ],
       groupName: "non-major netty dependencies",
       groupSlug: "non-major-netty",
     },
