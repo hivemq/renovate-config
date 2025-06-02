@@ -4,7 +4,6 @@
   extends: [
     "config:recommended",
     "schedule:weekends",
-    "schedule:automergeNonOfficeHours",
     ":noUnscheduledUpdates"
   ],
   enabledManagers: [
@@ -83,7 +82,6 @@
       groupName: "all patch dependencies",
       groupSlug: "all-patch",
       automerge: true,
-      platformAutomerge: false,
     },
     {
       matchManagers: [
@@ -107,7 +105,6 @@
       groupName: "all patch npm dependencies",
       groupSlug: "all-patch-npm",
       automerge: true,
-      platformAutomerge: false,
     },
     {
       matchCurrentVersion: "/^0/",
@@ -215,7 +212,6 @@
       groupName: "all non-major GitHub Actions dependencies",
       groupSlug: "all-non-major-github-actions",
       automerge: true,
-      platformAutomerge: false,
     },
   ],
 }
