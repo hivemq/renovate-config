@@ -1,33 +1,33 @@
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  description: "This config defines the default Renovate rules that will be used in HiveMQ Product repos.",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  description: 'This config defines the default Renovate rules that will be used in HiveMQ Product repos.',
   extends: [
-    "config:recommended",
-    "schedule:weekends",
-    ":noUnscheduledUpdates"
+    'config:recommended',
+    'schedule:weekends',
+    ':noUnscheduledUpdates'
   ],
   enabledManagers: [
-    "gradle",
-    "dockerfile",
-    "github-actions",
-    "npm",
-    "regex",
+    'gradle',
+    'dockerfile',
+    'github-actions',
+    'npm',
+    'regex',
   ],
   hostRules: [
     {
-      matchHost: "https://maven.pkg.github.com/hivemq/hivemq-commons",
-      username: "hivemq-jenkins",
-      "token": "{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}",
+      matchHost: 'https://maven.pkg.github.com/hivemq/hivemq-commons',
+      username: 'hivemq-jenkins',
+      token: '{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}',
     },
     {
-      matchHost: "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
-      username: "hivemq-jenkins",
-      "token": "{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}",
+      matchHost: 'https://maven.pkg.github.com/hivemq/vaadin-chartjs',
+      username: 'hivemq-jenkins',
+      token: '{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}',
     },
     {
-      matchHost: "npm.pkg.github.com",
-      hostType: "npm",
-      "token": "{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}",
+      matchHost: 'npm.pkg.github.com',
+      hostType: 'npm',
+      token: '{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}',
     },
   ],
   major: {
@@ -35,194 +35,195 @@
   },
   pinDigests: true,
   labels: [
-    "renovate",
+    'renovate',
   ],
   dependencyDashboardLabels: [
-    "renovate",
+    'renovate',
   ],
   packageRules: [
     {
+      description: 'configures the Maven registry for the Confluent Apache Kafka client',
       matchPackageNames: [
-        "io.confluent:*",
-        "org.apache.kafka:*",
+        'io.confluent:*',
+        'org.apache.kafka:*'
       ],
       registryUrls: [
-        "https://packages.confluent.io/maven",
+        'https://packages.confluent.io/maven'
+      ]
+    },
+    {
+      description: 'configures the Maven registry for hivemq-commons modules',
+      matchPackageNames: [
+        'com.hivemq.commons:*',
+      ],
+      registryUrls: [
+        'https://maven.pkg.github.com/hivemq/hivemq-commons',
       ],
     },
     {
+      description: 'configures the Maven registry for Vaadin ChartJs',
       matchPackageNames: [
-        "com.hivemq.commons:*",
+        'com.byteowls:*',
       ],
       registryUrls: [
-        "https://maven.pkg.github.com/hivemq/hivemq-commons",
-      ],
-    },
-    {
-      matchPackageNames: [
-        "com.byteowls:*",
-      ],
-      registryUrls: [
-        "https://maven.pkg.github.com/hivemq/vaadin-chartjs",
+        'https://maven.pkg.github.com/hivemq/vaadin-chartjs',
       ],
     },
     {
       matchUpdateTypes: [
-        "minor",
+        'minor',
       ],
-      matchCurrentVersion: "!/^0/",
-      groupName: "all minor dependencies",
-      groupSlug: "all-minor",
+      matchCurrentVersion: '!/^0/',
+      groupName: 'all minor dependencies',
+      groupSlug: 'all-minor',
     },
     {
       matchUpdateTypes: [
-        "patch",
+        'patch',
       ],
-      matchCurrentVersion: "!/^0/",
-      groupName: "all patch dependencies",
-      groupSlug: "all-patch",
+      matchCurrentVersion: '!/^0/',
+      groupName: 'all patch dependencies',
+      groupSlug: 'all-patch',
       automerge: true,
     },
     {
       matchManagers: [
-        "npm",
+        'npm',
       ],
       matchUpdateTypes: [
-        "minor",
+        'minor',
       ],
-      matchCurrentVersion: "!/^0/",
-      groupName: "all minor npm dependencies",
-      groupSlug: "all-minor-npm",
+      matchCurrentVersion: '!/^0/',
+      groupName: 'all minor npm dependencies',
+      groupSlug: 'all-minor-npm',
     },
     {
       matchManagers: [
-        "npm",
+        'npm',
       ],
       matchUpdateTypes: [
-        "patch",
+        'patch',
       ],
-      matchCurrentVersion: "!/^0/",
-      groupName: "all patch npm dependencies",
-      groupSlug: "all-patch-npm",
+      matchCurrentVersion: '!/^0/',
+      groupName: 'all patch npm dependencies',
+      groupSlug: 'all-patch-npm',
       automerge: true,
     },
     {
-      matchCurrentVersion: "/^0/",
+      matchCurrentVersion: '/^0/',
       dependencyDashboardApproval: true,
     },
-    // avoid updating xodus dependencies - marked to be deprecated soon
     {
+      description: 'Xodus cannot be updated automatically - marked to be deprecated soon',
       matchPackageNames: [
-        "org.jetbrains.xodus:*",
+        'org.jetbrains.xodus:*'
       ],
-      enabled: false,
-    },
-    // rocksdb can't be updated automatically - requires deep analysis
-    {
-      matchPackageNames: [
-        "org.rocksdb:*",
-      ],
-      enabled: false,
-    },
-    // jgroups can't be updated automatically - requires deep analysis
-    {
-      matchPackageNames: [
-        "org.jgroups:*",
-      ],
-      enabled: false,
-    },
-    // Netty 4.2 introduces breaking changes. We have to fix the IsolatedExtensionClassloader before we can update.
-    {
-      matchPackageNames: [
-        "io.netty:*",
-      ],
-      allowedVersions: "<4.2",
-      groupName: "non-major netty dependencies",
-      groupSlug: "non-major-netty",
+      enabled: false
     },
     {
+      description: 'RocksDB cannot be updated automatically - requires deep analysis',
       matchPackageNames: [
-        "/^io\\.opentelemetry[.:].*/",
+        'org.rocksdb:*'
+      ],
+      enabled: false
+    },
+    {
+      description: 'JGroups cannot be updated automatically - requires deep analysis',
+      matchPackageNames: [
+        'org.jgroups:*'
+      ],
+      enabled: false
+    },
+    {
+      description: 'Netty 4.2 introduces breaking changes - we have to fix the extension classloader before we can update',
+      matchPackageNames: [
+        'io.netty:*'
+      ],
+      allowedVersions: '<4.2',
+      groupName: 'non-major netty dependencies',
+      groupSlug: 'non-major-netty'
+    },
+    {
+      matchPackageNames: [
+        '/^io\\.opentelemetry[.:].*/'
       ],
       ignoreUnstable: false,
-      groupName: "opentelemetry dependencies",
-      groupSlug: "opentelemetry",
+      groupName: 'opentelemetry dependencies',
+      groupSlug: 'opentelemetry'
     },
-    // 8.14.3 is the latest version that still has the Apache v2 license. So, we can't upgrade to versions greater than that.
     {
+      description: 'Vaadin 8.14.3 is the latest version that still has the Apache v2 license, so we cannot upgrade to newer versions',
       matchPackageNames: [
-        "com.vaadin:*",
+        'com.vaadin:*'
       ],
-      matchCurrentVersion: "[8.14.3,)",
-      allowedVersions: "<=8.14.3",
+      matchCurrentVersion: '[8.14.3,)',
+      allowedVersions: '<=8.14.3'
     },
-    // EqualsVerifier 4.0 requires Java 17, so we have to limit the version updates for the LTS branches
-    // (see https://github.com/jqno/equalsverifier/blob/main/CHANGELOG.md#40---2025-05-05)
     {
+      description: 'EqualsVerifier 4.0 requires Java 17, so we have to limit the version updates for the LTS branches (see https://github.com/jqno/equalsverifier/blob/main/CHANGELOG.md#40---2025-05-05)',
       matchBaseBranches: [
-        "/master-4.28/",
+        '/master-4.28/'
       ],
       matchPackageNames: [
-        "nl.jqno.equalsverifier:*",
+        'nl.jqno.equalsverifier:*'
       ],
-      allowedVersions: "<4",
+      allowedVersions: '<4'
     },
-    // avoid kafka versions with commercial licenses i.e. versions with 'ce' suffixes
     {
+      description: 'avoid Kafka versions with commercial licenses, i.e. versions with ce suffixes',
       matchPackageNames: [
-        "org.apache.kafka:*",
+        'org.apache.kafka:*'
       ],
-      allowedVersions: "!/ce$/",
+      allowedVersions: '!/ce$/'
     },
-    // avoid jctools version with 'ea' suffix
-    // https://github.com/JCTools/JCTools/issues/360
     {
+      description: 'avoid JCTools versions with ea suffix (see https://github.com/JCTools/JCTools/issues/360)',
       matchPackageNames: [
-        "org.jctools:*",
+        'org.jctools:*'
       ],
-      allowedVersions: "!/ea$/",
+      allowedVersions: '!/ea$/'
     },
-    // avoid updating HiveMQ SDKs
     {
+      description: 'avoid updating HiveMQ SDKs',
       matchPackageNames: [
-        "/^com\\.hivemq[.:].*-sdk$/",
+        '/^com\\.hivemq[.:].*-sdk$/'
       ],
-      enabled: false,
+      enabled: false
     },
-    // avoid updating Gradle Enterprise plugins as these need to be updated in sync
     {
-      "matchPackageNames": [
-        "com.gradle.develocity:com.gradle.develocity.gradle.plugin",
-        "com.gradle.enterprise:com.gradle.enterprise.gradle.plugin",
-        "com.gradle.common-custom-user-data-gradle-plugin:com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin",
+      description: 'avoid updating Gradle Enterprise plugins as these need to be updated in sync',
+      matchPackageNames: [
+        'com.gradle.develocity:com.gradle.develocity.gradle.plugin',
+        'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin',
+        'com.gradle.common-custom-user-data-gradle-plugin:com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin'
       ],
-      enabled: false,
+      enabled: false
     },
-    // GitHub Actions major
     {
+      description: 'GitHub Actions major',
       matchManagers: [
-        "github-actions",
+        'github-actions'
       ],
       matchUpdateTypes: [
-        "major",
+        'major'
       ],
-      groupName: "all major GitHub Actions dependencies",
-      groupSlug: "all-major-github-actions",
-      dependencyDashboardApproval: false,
+      groupName: 'all major GitHub Actions dependencies',
+      groupSlug: 'all-major-github-actions',
+      dependencyDashboardApproval: false
     },
-    // GitHub Actions minor & patch
     {
+      description: 'GitHub Actions minor & patch',
       matchManagers: [
-        "github-actions",
+        'github-actions'
       ],
       matchUpdateTypes: [
-        "minor",
-        "patch",
-        "digest",
+        'minor',
+        'patch',
+        'digest'
       ],
-      groupName: "all non-major GitHub Actions dependencies",
-      groupSlug: "all-non-major-github-actions",
-      automerge: true,
+      groupName: 'all non-major GitHub Actions dependencies',
+      groupSlug: 'all-non-major-github-actions',
+      automerge: true
     },
   ],
 }
