@@ -160,16 +160,6 @@
       allowedVersions: '<=8.14.3'
     },
     {
-      description: 'EqualsVerifier 4.0 requires Java 17, so we have to limit the version updates for the LTS branches (see https://github.com/jqno/equalsverifier/blob/main/CHANGELOG.md#40---2025-05-05)',
-      matchBaseBranches: [
-        '/master-4.28/'
-      ],
-      matchPackageNames: [
-        'nl.jqno.equalsverifier:*'
-      ],
-      allowedVersions: '<4'
-    },
-    {
       description: 'avoid Kafka versions with commercial licenses, i.e. versions with ce suffixes',
       matchPackageNames: [
         'org.apache.kafka:*'
