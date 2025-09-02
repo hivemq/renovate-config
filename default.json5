@@ -6,6 +6,7 @@
     'schedule:weekends',
     ':noUnscheduledUpdates'
   ],
+  configMigration: true,
   enabledManagers: [
     'gradle',
     'dockerfile',
