@@ -145,6 +145,16 @@
       groupSlug: 'non-major-netty'
     },
     {
+      description: 'Allow Netty updates for projects that have already migrated to version >= 4.2',
+      matchPackageNames: [
+        'io.netty:*'
+      ],
+      matchCurrentVersion: '[4.2.0,)',
+      allowedVersions: '>4.2',
+      groupName: 'non-major netty dependencies',
+      groupSlug: 'non-major-netty'
+    },
+    {
       matchPackageNames: [
         '/^io\\.opentelemetry[.:].*/'
       ],
