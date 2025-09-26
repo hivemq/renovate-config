@@ -11,7 +11,7 @@
     'gradle',
     'dockerfile',
     'github-actions',
-    'npm',
+//    'npm',
     'regex',
   ],
   hostRules: [
@@ -25,11 +25,11 @@
       username: 'hivemq-jenkins',
       token: '{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}',
     },
-    {
-      matchHost: 'npm.pkg.github.com',
-      hostType: 'npm',
-      token: '{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}',
-    },
+//    {
+//      matchHost: 'npm.pkg.github.com',
+//      hostType: 'npm',
+//      token: '{{ secrets.GITHUB_TOKEN_HIVEMQ_JENKINS }}',
+//    },
   ],
   major: {
     dependencyDashboardApproval: true,
@@ -87,29 +87,29 @@
       groupSlug: 'all-patch',
       automerge: true,
     },
-    {
-      matchManagers: [
-        'npm',
-      ],
-      matchUpdateTypes: [
-        'minor',
-      ],
-      matchCurrentVersion: '!/^0/',
-      groupName: 'all minor npm dependencies',
-      groupSlug: 'all-minor-npm',
-    },
-    {
-      matchManagers: [
-        'npm',
-      ],
-      matchUpdateTypes: [
-        'patch',
-      ],
-      matchCurrentVersion: '!/^0/',
-      groupName: 'all patch npm dependencies',
-      groupSlug: 'all-patch-npm',
-      automerge: true,
-    },
+//    {
+//      matchManagers: [
+//        'npm',
+//      ],
+//      matchUpdateTypes: [
+//        'minor',
+//      ],
+//      matchCurrentVersion: '!/^0/',
+//      groupName: 'all minor npm dependencies',
+//      groupSlug: 'all-minor-npm',
+//    },
+//    {
+//      matchManagers: [
+//        'npm',
+//      ],
+//      matchUpdateTypes: [
+//        'patch',
+//      ],
+//      matchCurrentVersion: '!/^0/',
+//      groupName: 'all patch npm dependencies',
+//      groupSlug: 'all-patch-npm',
+//      automerge: true,
+//    },
     {
       matchCurrentVersion: '/^0/',
       dependencyDashboardApproval: true,
