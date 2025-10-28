@@ -74,7 +74,6 @@
       matchUpdateTypes: [
         'minor',
       ],
-      matchCurrentVersion: '!/^0/',
       groupName: 'all minor dependencies',
       groupSlug: 'all-minor',
     },
@@ -82,7 +81,6 @@
       matchUpdateTypes: [
         'patch',
       ],
-      matchCurrentVersion: '!/^0/',
       groupName: 'all patch dependencies',
       groupSlug: 'all-patch',
       automerge: true,
@@ -94,7 +92,6 @@
       matchUpdateTypes: [
         'minor',
       ],
-      matchCurrentVersion: '!/^0/',
       groupName: 'all minor npm dependencies',
       groupSlug: 'all-minor-npm',
     },
@@ -105,7 +102,6 @@
       matchUpdateTypes: [
         'patch',
       ],
-      matchCurrentVersion: '!/^0/',
       groupName: 'all patch npm dependencies',
       groupSlug: 'all-patch-npm',
       automerge: true,
