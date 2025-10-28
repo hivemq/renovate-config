@@ -111,10 +111,6 @@
       automerge: true,
     },
     {
-      matchCurrentVersion: '/^0/',
-      dependencyDashboardApproval: true,
-    },
-    {
       description: 'Xodus cannot be updated automatically - marked to be deprecated soon',
       matchPackageNames: [
         'org.jetbrains.xodus:*'
