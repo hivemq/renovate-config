@@ -155,6 +155,16 @@
       groupSlug: 'opentelemetry'
     },
     {
+      description: 'Logstash Logback Encoder 9.0 requires Java 17, so we have to limit the version updates for the LTS branches (see https://github.com/logfellow/logstash-logback-encoder/releases/tag/logstash-logback-encoder-9.0)',
+      matchBaseBranches: [
+        'master-4.28'
+      ],
+      matchPackageNames: [
+        'net.logstash.logback:*'
+      ],
+      allowedVersions: '<9'
+    },
+    {
       description: 'Vaadin 8.14.3 is the latest version that still has the Apache v2 license, so we cannot upgrade to newer versions',
       matchPackageNames: [
         'com.vaadin:*'
