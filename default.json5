@@ -155,6 +155,14 @@
       groupSlug: 'opentelemetry'
     },
     {
+      description: 'TanStack Router has a regression that affects all frontend projects',
+      matchPackageNames: [
+        '@tanstack/react-router',
+        '@tanstack/react-router-devtools'
+      ],
+      allowedVersions: '<1.132'
+    },
+    {
       description: 'Logstash Logback Encoder 9.0 requires Java 17, so we have to limit the version updates for the LTS branches (see https://github.com/logfellow/logstash-logback-encoder/releases/tag/logstash-logback-encoder-9.0)',
       matchBaseBranches: [
         'master-4.28'
