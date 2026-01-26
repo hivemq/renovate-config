@@ -6,6 +6,8 @@
     'schedule:weekends',
     ':noUnscheduledUpdates'
   ],
+  mode: 'full',
+  onboarding: true,
   configMigration: true,
   enabledManagers: [
     'gradle',
