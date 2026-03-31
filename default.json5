@@ -15,6 +15,20 @@
     'github-actions',
     'npm',
     'regex',
+    'jsonata',
+  ],
+  customManagers: [
+    {
+      customType: 'jsonata',
+      datasourceTemplate: 'docker',
+      description: 'OCI images in oci.versions.toml',
+      fileFormat: 'toml',
+      managerFilePatterns: ['**/oci.versions.toml'],
+      matchStrings: [
+        'oci[$not(update = false)].{"depName": image, "currentValue": tag, "currentDigest": digest}',
+      ],
+      versioningTemplate: 'docker',
+    },
   ],
   hostRules: [
     {
@@ -44,6 +58,17 @@
     'renovate',
   ],
   packageRules: [
+    {
+      description: 'OCI platform dependencies are not real Maven packages (gradle-oci plugin)',
+      matchManagers: [
+        'gradle',
+      ],
+      matchPackageNames: [
+        'linux:amd64',
+        'linux:arm64',
+      ],
+      enabled: false,
+    },
     {
       description: 'configures the Maven registry for the Confluent Apache Kafka client',
       matchPackageNames: [
