@@ -229,6 +229,21 @@
       enabled: false
     },
     {
+      description: 'OCI digest-only updates',
+      matchManagers: [
+        'regex',
+      ],
+      matchFileNames: [
+        '**/oci.versions.toml',
+      ],
+      matchUpdateTypes: [
+        'digest',
+      ],
+      groupName: 'all OCI digest dependencies',
+      groupSlug: 'all-oci-digest',
+      automerge: true,
+    },
+    {
       description: 'GitHub Actions major',
       matchManagers: [
         'github-actions'
