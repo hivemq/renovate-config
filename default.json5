@@ -15,18 +15,17 @@
     'github-actions',
     'npm',
     'regex',
-    'jsonata',
   ],
   customManagers: [
     {
-      customType: 'jsonata',
+      customType: 'regex',
       datasourceTemplate: 'docker',
       description: 'OCI images in oci.versions.toml',
-      fileFormat: 'toml',
       managerFilePatterns: ['**/oci.versions.toml'],
       matchStrings: [
-        'oci[$not(update = false)].{"depName": image, "currentValue": tag, "currentDigest": digest}',
+        'image\\s*=\\s*"(?<depName>[^"]+)"\\nreference\\s*=\\s*"(?<currentValue>[^@]+)@(?<currentDigest>[^"]+)"',
       ],
+      autoReplaceStringTemplate: 'image = "{{depName}}"\\nreference = "{{newValue}}@{{#if newDigest}}{{newDigest}}{{else}}{{currentDigest}}{{/if}}"',
       versioningTemplate: 'docker',
     },
   ],
