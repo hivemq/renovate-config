@@ -25,7 +25,7 @@
       matchStrings: [
         'image\\s*=\\s*"(?<depName>[^"]+)"\\nreference\\s*=\\s*"(?<currentValue>[^@]+)@(?<currentDigest>[^"]+)"',
       ],
-      autoReplaceStringTemplate: 'image = "{{depName}}"\\nreference = "{{newValue}}@{{#if newDigest}}{{newDigest}}{{else}}{{currentDigest}}{{/if}}"',
+      autoReplaceStringTemplate: 'image = "{{depName}}"\nreference = "{{newValue}}@{{#if newDigest}}{{newDigest}}{{else}}{{currentDigest}}{{/if}}"',
       versioningTemplate: 'docker',
     },
   ],
