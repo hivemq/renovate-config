@@ -244,6 +244,13 @@
       automerge: true,
     },
     {
+      description: 'Eclipse Temurin 26 is not LTS, limit major updates to Java 25',
+      matchPackageNames: [
+        'library/eclipse-temurin',
+      ],
+      allowedVersions: '<26',
+    },
+    {
       description: 'GitHub Actions major',
       matchManagers: [
         'github-actions'
