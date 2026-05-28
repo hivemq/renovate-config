@@ -199,11 +199,18 @@
       allowedVersions: '<=8.14.3'
     },
     {
-      description: 'avoid Kafka versions with commercial licenses, i.e. versions with ce suffixes',
+      description: 'avoid Kafka versions with commercial licenses (ce suffix) and skip the 7.9.6 / 7.9.7 patch versions',
       matchPackageNames: [
         'org.apache.kafka:*'
       ],
-      allowedVersions: '!/ce$/'
+      allowedVersions: '!/(ce$|^7\\.9\\.(6|7)(-.*)?$)/'
+    },
+    {
+      description: 'skip the Confluent kafka-avro-serializer 7.9.6 / 7.9.7 patch versions',
+      matchPackageNames: [
+        'io.confluent:kafka-avro-serializer'
+      ],
+      allowedVersions: '!/^7\\.9\\.(6|7)(-.*)?$/'
     },
     {
       description: 'avoid JCTools versions with ea suffix (see https://github.com/JCTools/JCTools/issues/360)',
