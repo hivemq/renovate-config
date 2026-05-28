@@ -210,7 +210,7 @@
       matchPackageNames: [
         'io.confluent:kafka-avro-serializer'
       ],
-      allowedVersions: '!/^7\\.9\\.(6|7)(-.*)?$/'
+      allowedVersions: '!/^7\\.9\\.(6|7)$/'
     },
     {
       description: 'avoid JCTools versions with ea suffix (see https://github.com/JCTools/JCTools/issues/360)',
