@@ -227,13 +227,14 @@
       enabled: false
     },
     {
-      description: 'avoid updating Gradle Enterprise plugins as these need to be updated in sync',
+      description: 'group Gradle Enterprise plugins separately as these need to be updated in sync',
       matchPackageNames: [
         'com.gradle.develocity:com.gradle.develocity.gradle.plugin',
         'com.gradle.enterprise:com.gradle.enterprise.gradle.plugin',
         'com.gradle.common-custom-user-data-gradle-plugin:com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin'
       ],
-      enabled: false
+      groupName: 'Gradle Enterprise plugins',
+      groupSlug: 'gradle-enterprise-plugins'
     },
     {
       description: 'OCI digest-only updates',
