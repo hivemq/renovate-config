@@ -253,8 +253,11 @@
     },
     {
       description: 'Eclipse Temurin 26 is not LTS, limit major updates to Java 25',
+      // Matches the image in any registry: it is consumed from Docker Hub as library/eclipse-temurin, and from
+      // ECR Public as public.ecr.aws/<alias>/base-images/eclipse-temurin (PLT-1261). The ECR registry alias is
+      // still provisional, so match on the image name rather than on any one path.
       matchPackageNames: [
-        'library/eclipse-temurin',
+        '**/eclipse-temurin',
       ],
       allowedVersions: '<26',
     },
