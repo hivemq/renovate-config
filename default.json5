@@ -254,8 +254,9 @@
     {
       description: 'Eclipse Temurin 26 is not LTS, limit major updates to Java 25',
       // Matches the image in any registry: it is consumed from Docker Hub as library/eclipse-temurin, and from
-      // ECR Public as public.ecr.aws/<alias>/base-images/eclipse-temurin (PLT-1261). The ECR registry alias is
-      // still provisional, so match on the image name rather than on any one path.
+      // ECR Public as public.ecr.aws/hivemq/library/eclipse-temurin (PLT-1261, PLT-1579). Matching on the image
+      // name rather than any one path is what kept this rule working across the base-images/ -> library/ rename
+      // and the y7j2u9c5 -> hivemq alias change, so keep it that way.
       matchPackageNames: [
         '**/eclipse-temurin',
       ],
