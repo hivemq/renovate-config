@@ -4,6 +4,10 @@
   extends: [
     'config:recommended',
     'schedule:weekends',
+    // Sets updateNotScheduled: false, so Renovate leaves branches alone outside the weekend window.
+    // Rules below that set `automerge: true` opt back in with `updateNotScheduled: true`: Renovate
+    // checks the branch schedule long before it evaluates automerge, so without that opt-in it
+    // abandons the branch first and an approved, green PR waits for the next weekend to merge.
     ':noUnscheduledUpdates'
   ],
   mode: 'full',
@@ -110,6 +114,7 @@
       groupName: 'all patch dependencies',
       groupSlug: 'all-patch',
       automerge: true,
+      updateNotScheduled: true,
     },
     {
       matchManagers: [
@@ -131,6 +136,7 @@
       groupName: 'all patch npm dependencies',
       groupSlug: 'all-patch-npm',
       automerge: true,
+      updateNotScheduled: true,
     },
     {
       description: 'Xodus cannot be updated automatically - marked to be deprecated soon',
@@ -250,6 +256,7 @@
       groupName: 'all OCI digest dependencies',
       groupSlug: 'all-oci-digest',
       automerge: true,
+      updateNotScheduled: true,
     },
     {
       description: 'Eclipse Temurin 26 is not LTS, limit major updates to Java 25',
@@ -286,7 +293,8 @@
       ],
       groupName: 'all non-major GitHub Actions dependencies',
       groupSlug: 'all-non-major-github-actions',
-      automerge: true
+      automerge: true,
+      updateNotScheduled: true
     },
   ],
 }
