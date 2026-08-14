@@ -307,6 +307,13 @@
       ],
       minimumReleaseAge: '3 days',
     },
+    {
+      description: 'container images carry a release timestamp on Docker Hub only, so the age of an image from any other registry cannot be determined',
+      matchDatasources: [
+        'docker',
+      ],
+      minimumReleaseAgeBehaviour: 'timestamp-optional',
+    },
     // The four rules below drop the waiting period for packages we publish ourselves, including
     // the open source tooling team members maintain under their own accounts. They must stay after
     // the npm rule: later package rules win.
