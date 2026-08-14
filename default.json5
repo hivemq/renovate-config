@@ -18,7 +18,7 @@
     'dockerfile',
     'github-actions',
     'npm',
-    'regex',
+    'custom.regex',
   ],
   customManagers: [
     {
@@ -53,6 +53,10 @@
   major: {
     dependencyDashboardApproval: true,
   },
+  // Guards against releases that get pulled or superseded shortly after publication, and against
+  // artifacts that show up in a registry while the release is still in progress.
+  // internalChecksFilter defaults to 'strict', so a pending update gets no branch and no PR.
+  minimumReleaseAge: '12 hours',
   pinDigests: true,
   labels: [
     'renovate',
@@ -245,7 +249,7 @@
     {
       description: 'OCI digest-only updates',
       matchManagers: [
-        'regex',
+        'custom.regex',
       ],
       matchFileNames: [
         '**/oci.versions.toml',
@@ -295,6 +299,63 @@
       groupSlug: 'all-non-major-github-actions',
       automerge: true,
       updateNotScheduled: true
+    },
+    {
+      description: 'npm packages can be unpublished within 72 hours of their release',
+      matchManagers: [
+        'npm',
+      ],
+      minimumReleaseAge: '3 days',
+    },
+    // The four rules below drop the waiting period for packages we publish ourselves, including
+    // the open source tooling team members maintain under their own accounts. They must stay after
+    // the npm rule: later package rules win.
+    {
+      description: 'Maven groups and Gradle plugin marker artifacts we publish ourselves',
+      matchManagers: [
+        'gradle',
+      ],
+      matchPackageNames: [
+        '/^com\\.hivemq[.:]/',
+        '/^cloud\\.hivemq[.:]/',
+        '/^io\\.github\\.sgtsilvio[.:]/',
+      ],
+      minimumReleaseAge: null,
+    },
+    {
+      description: 'npm packages we publish to npm.pkg.github.com',
+      matchManagers: [
+        'npm',
+      ],
+      matchPackageNames: [
+        '@hivemq/*',
+      ],
+      minimumReleaseAge: null,
+    },
+    {
+      description: 'GitHub Actions and reusable workflows we maintain ourselves',
+      matchManagers: [
+        'github-actions',
+      ],
+      matchPackageNames: [
+        'hivemq/*',
+        'donnerbart/*',
+      ],
+      minimumReleaseAge: null,
+    },
+    {
+      description: 'container images from registries we control',
+      matchDatasources: [
+        'docker',
+      ],
+      matchPackageNames: [
+        'hivemq/*',
+        'docker.io/hivemq/*',
+        // ghcr.io and public.ecr.aws image names may be nested, Docker Hub names may not
+        'ghcr.io/hivemq/**',
+        'public.ecr.aws/hivemq/**',
+      ],
+      minimumReleaseAge: null,
     },
   ],
 }
