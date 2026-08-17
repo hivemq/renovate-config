@@ -23,12 +23,7 @@ jobs:
           # renovate-config-validator needs the styleText export, added in Node 20.12.
           node-version: '22'
 
-      - name: Check default.json syntax
-        # Not passed to the validator: it would resolve the preset it extends over the network,
-        # checking the published default.json5 rather than the one in this commit.
-        run: node -e "JSON.parse(require('fs').readFileSync('default.json', 'utf8'))"
-
-      - name: Validate default.json5
+      - name: Validate Renovate config
         run: |
           set -euo pipefail
           # The preset leaves baseBranchPatterns to the repos that extend it, but the validator
@@ -42,4 +37,4 @@ jobs:
             echo "  baseBranchPatterns: ['main', 'master-4.28'],"
             tail -n +2 default.json5
           } > "${RUNNER_TEMP}/default.json5"
-          npx --yes --package renovate renovate-config-validator --strict "${RUNNER_TEMP}/default.json5"
+          npx --yes --package renovate renovate-config-validator --strict "${RUNNER_TEMP}/default.json5" default.json
