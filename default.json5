@@ -381,5 +381,17 @@
       ],
       minimumReleaseAge: null,
     },
+    {
+      description: 'Renovate cannot determine a release age for these update types, so requiring one holds them forever',
+      matchUpdateTypes: [
+        'pin',
+        'replacement',
+        'lockFileMaintenance',
+        'lockfileUpdate',
+        'bump',
+        'rollback',
+      ],
+      minimumReleaseAge: null,
+    },
   ],
 }
