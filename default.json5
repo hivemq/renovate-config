@@ -314,6 +314,16 @@
       ],
       minimumReleaseAgeBehaviour: 'timestamp-optional',
     },
+    {
+      description: 'actions pinned to a branch have no release to age against, so their digest updates stay pending forever, while the wait still applies wherever a timestamp exists',
+      matchManagers: [
+        'github-actions',
+      ],
+      matchUpdateTypes: [
+        'digest',
+      ],
+      minimumReleaseAgeBehaviour: 'timestamp-optional',
+    },
     // The four rules below drop the waiting period for packages we publish ourselves, including
     // the open source tooling team members maintain under their own accounts. They must stay after
     // the npm rule: later package rules win.
@@ -361,6 +371,13 @@
         // ghcr.io and public.ecr.aws image names may be nested, Docker Hub names may not
         'ghcr.io/hivemq/**',
         'public.ecr.aws/hivemq/**',
+      ],
+      minimumReleaseAge: null,
+    },
+    {
+      description: 'a pending pin leaves the reference floating, with no previously pinned digest to hold on, so the wait only delays recording the digest CI already runs',
+      matchUpdateTypes: [
+        'pinDigest',
       ],
       minimumReleaseAge: null,
     },
