@@ -315,9 +315,7 @@
       minimumReleaseAgeBehaviour: 'timestamp-optional',
     },
     {
-      description: 'actions pinned to a branch rather than a version tag have no release to age against, so their digest updates stay pending forever',
-      // Not minimumReleaseAge: null, so the wait still applies to the tag-pinned actions, whose digest
-      // updates github-tags can age. Scoped to digest updates: version bumps always have a timestamp.
+      description: 'actions pinned to a branch have no release to age against, so their digest updates stay pending forever, while the wait still applies wherever a timestamp exists',
       matchManagers: [
         'github-actions',
       ],
@@ -377,9 +375,7 @@
       minimumReleaseAge: null,
     },
     {
-      description: 'a pending pin leaves the reference floating, so the wait delays recording the digest CI already runs instead of holding us on a known one',
-      // Unlike a digest update, there is no previously pinned digest to wait on. Renovate also ages
-      // the pin against the newest version matching the tag, which resets on every upstream release.
+      description: 'a pending pin leaves the reference floating, with no previously pinned digest to hold on, so the wait only delays recording the digest CI already runs',
       matchUpdateTypes: [
         'pinDigest',
       ],
