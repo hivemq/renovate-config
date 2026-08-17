@@ -1,0 +1,45 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  renovate-config-validator:
+    name: renovate-config-validator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          # renovate-config-validator needs the styleText export, added in Node 20.12.
+          node-version: '22'
+
+      - name: Check default.json syntax
+        # Not passed to the validator: it would resolve the preset it extends over the network,
+        # checking the published default.json5 rather than the one in this commit.
+        run: node -e "JSON.parse(require('fs').readFileSync('default.json', 'utf8'))"
+
+      - name: Validate default.json5
+        run: |
+          set -euo pipefail
+          # The preset leaves baseBranchPatterns to the repos that extend it, but the validator
+          # rejects matchBaseBranches without it, so validate a copy that supplies it.
+          head -1 default.json5 | grep -qx '{' || {
+            echo "::error file=default.json5::expected the file to open with '{'"
+            exit 1
+          }
+          {
+            echo '{'
+            echo "  baseBranchPatterns: ['main', 'master-4.28'],"
+            tail -n +2 default.json5
+          } > "${RUNNER_TEMP}/default.json5"
+          npx --yes --package renovate renovate-config-validator --strict "${RUNNER_TEMP}/default.json5"
