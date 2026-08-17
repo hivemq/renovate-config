@@ -314,6 +314,18 @@
       ],
       minimumReleaseAgeBehaviour: 'timestamp-optional',
     },
+    {
+      description: 'actions pinned to a branch rather than a version tag have no release to age against, so their digest updates stay pending forever',
+      // Not minimumReleaseAge: null, so the wait still applies to the tag-pinned actions, whose digest
+      // updates github-tags can age. Scoped to digest updates: version bumps always have a timestamp.
+      matchManagers: [
+        'github-actions',
+      ],
+      matchUpdateTypes: [
+        'digest',
+      ],
+      minimumReleaseAgeBehaviour: 'timestamp-optional',
+    },
     // The four rules below drop the waiting period for packages we publish ourselves, including
     // the open source tooling team members maintain under their own accounts. They must stay after
     // the npm rule: later package rules win.
