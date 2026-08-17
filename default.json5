@@ -376,5 +376,14 @@
       ],
       minimumReleaseAge: null,
     },
+    {
+      description: 'a pending pin leaves the reference floating, so the wait delays recording the digest CI already runs instead of holding us on a known one',
+      // Unlike a digest update, there is no previously pinned digest to wait on. Renovate also ages
+      // the pin against the newest version matching the tag, which resets on every upstream release.
+      matchUpdateTypes: [
+        'pinDigest',
+      ],
+      minimumReleaseAge: null,
+    },
   ],
 }
