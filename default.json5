@@ -381,5 +381,17 @@
       ],
       minimumReleaseAge: null,
     },
+    {
+      description: 'the Pi review action is consumed through its floating major tag, so consumers pick up each release without a bump PR; pinning it to a digest would revert that on the next run',
+      matchManagers: [
+        'github-actions',
+      ],
+      matchPackageNames: [
+        'hivemq/hivemq-pi-review-action',
+        // reusable workflows are referenced as <owner>/<repo>/.github/workflows/<file>@<ref>
+        'hivemq/hivemq-pi-review-action/**',
+      ],
+      pinDigests: false,
+    },
   ],
 }
