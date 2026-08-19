@@ -387,9 +387,9 @@
         'github-actions',
       ],
       matchPackageNames: [
+        // covers the reusable workflow reference too: Renovate strips the
+        // .github/workflows/<file> path and extracts both as this one package
         'hivemq/hivemq-pi-review-action',
-        // reusable workflows are referenced as <owner>/<repo>/.github/workflows/<file>@<ref>
-        'hivemq/hivemq-pi-review-action/**',
       ],
       pinDigests: false,
     },
