@@ -382,6 +382,18 @@
       minimumReleaseAge: null,
     },
     {
+      description: 'Renovate cannot determine a release age for these update types, so requiring one holds them forever',
+      matchUpdateTypes: [
+        'pin',
+        'replacement',
+        'lockFileMaintenance',
+        'lockfileUpdate',
+        'bump',
+        'rollback',
+      ],
+      minimumReleaseAge: null,
+    },
+    {
       description: 'the Pi review action is consumed through its floating major tag, so consumers pick up each release without a bump PR; pinning it to a digest would revert that on the next run',
       matchManagers: [
         'github-actions',
