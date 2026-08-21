@@ -164,7 +164,7 @@
       enabled: false
     },
     {
-      description: 'Netty 4.2 introduces breaking changes - we have to fix the extension classloader before we can update',
+      description: 'Netty 4.2 introduces breaking changes - keep projects still not migrated to it on older version',
       matchPackageNames: [
         'io.netty:*'
       ],
