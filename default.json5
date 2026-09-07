@@ -209,6 +209,13 @@
       allowedVersions: '<=8.14.3'
     },
     {
+      description: 'org.json:json uses a yyyymmdd calendar version, so every update is a major increment of hundreds or thousands, far beyond the maxMajorIncrement default of 500. 0 disables the limit.',
+      matchPackageNames: [
+        'org.json:json'
+      ],
+      maxMajorIncrement: 0
+    },
+    {
       description: 'avoid Kafka versions with commercial licenses (ce suffix) and skip the 7.9.6 / 7.9.7 patch versions',
       matchPackageNames: [
         'org.apache.kafka:*'
