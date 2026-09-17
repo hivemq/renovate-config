@@ -66,10 +66,10 @@
   ],
   packageRules: [
     // A lookup that Maven Central answers with HTTP 429 aborts the whole Renovate run of a repository, so the
-    // dashboard is not updated and ticked checkboxes stay unprocessed. Coordinates that are not Maven packages must
+    // dashboard is not updated and ticked checkboxes stay unprocessed. Coordinates that are not on Maven Central must
     // therefore never be looked up.
     {
-      description: 'container images, platform qualifiers and parser artifacts in Gradle builds are not Maven packages (gradle-oci plugin)',
+      description: 'Gradle coordinates that are not on Maven Central: container images and platform qualifiers (gradle-oci plugin), HiveMQ artifacts from other repositories, and parser artifacts',
       matchManagers: [
         'gradle',
       ],
@@ -77,8 +77,17 @@
         // platform qualifiers, e.g. linux:amd64
         'linux:*',
         // HiveMQ coordinates, by exact name since com.hivemq also has Maven packages
+        'com.hivemq:hivemq',
+        'com.hivemq:hivemq-clustering',
+        'com.hivemq:hivemq-data-hub',
+        'com.hivemq:hivemq-edge',
+        'com.hivemq:hivemq-enterprise',
+        'com.hivemq:hivemq-enterprise-extension-signature-creator',
         'com.hivemq:hivemq-enterprise-k8s',
+        'com.hivemq:hivemq-pulse-agent',
         'com.hivemq:hivemq4-documentation',
+        // HiveMQ extensions, this group has no Maven packages
+        'com.hivemq.extensions:*',
         // container images
         'azure-storage:*',
         'bitnamilegacy:*',
