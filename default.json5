@@ -109,6 +109,16 @@
       enabled: false,
     },
     {
+      description: 'the HiveMQ Enterprise Extension Gradle plugin is published to an S3 repository that Renovate has no credentials for',
+      matchManagers: [
+        'gradle',
+      ],
+      matchPackageNames: [
+        'com.hivemq.enterprise-extension:com.hivemq.enterprise-extension.gradle.plugin',
+      ],
+      enabled: false,
+    },
+    {
       description: 'configures the Maven registry for the Confluent Apache Kafka client',
       matchPackageNames: [
         'io.confluent:*',
