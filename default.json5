@@ -119,6 +119,13 @@
       enabled: false,
     },
     {
+      description: 'the Java version of actions/setup-java is chosen per workflow and release line, not by the latest JDK release',
+      matchDatasources: [
+        'java-version',
+      ],
+      enabled: false,
+    },
+    {
       description: 'configures the Maven registry for the Confluent Apache Kafka client',
       matchPackageNames: [
         'io.confluent:*',
